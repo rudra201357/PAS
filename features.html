@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Product Features</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+   
+
+#bubble-container { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.star {
+    position: absolute;
+    width: 25px; /* Base size for the star */
+    height: 25px;
+    background-color: transparent; /* Color will be set by JS */
+    opacity: 0;
+    
+    /* === THIS IS THE KEY FOR THE STAR SHAPE === */
+    clip-path: polygon(
+        50% 0%, 
+        61% 35%, 
+        98% 35%, 
+        68% 57%, 
+        79% 91%, 
+        50% 70%, 
+        21% 91%, 
+        32% 57%, 
+        2% 35%, 
+        39% 35%
+    );
+    /* ========================================= */
+
+    animation: starAnimation 4s ease-out forwards; /* Apply the star animation */
+}
+
+@keyframes starAnimation {
+    0% {
+        transform: translate3d(0, 0, 0) scale(0) rotate(0deg); /* Start small */
+        opacity: 0;
+    }
+    10% {
+        transform: translate3d(0, 0, 0) scale(0.8) rotate(30deg); /* Grow and rotate slightly */
+        opacity: 1; /* Become fully visible */
+    }
+    100% {
+        transform: translate3d(0, -200px, 0) scale(1.2) rotate(360deg); /* Rise, grow, and complete a full rotation */
+        opacity: 0; /* Fade out */
+    }
+}
+    </style>
+</head>
+   <div id="bubble-container"></div>
+<body class="bg-gray-900 text-gray-200">
+
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl w-full space-y-8 text-center">
+            <!-- Header Section -->
+            <div class="mb-10">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white tracking-tight">Powerful Features</h1>
+                <p class="mt-4 text-xl text-gray-400">
+                    Discover how our product can solve your problems and help you achieve your goals.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Feature Card 1 -->
+                <div class="bg-gray-800 rounded-2xl p-8 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center justify-center h-16 w-16 bg-sky-500 text-white rounded-full mx-auto mb-4">
+                        <i class="fas fa-bolt fa-2x"></i>
+                    </div>
+                    <h2 class="mt-4 text-2xl font-bold text-white">Blazing Fast Performance</h2>
+                    <p class="mt-2 text-md text-gray-400">
+                        Our platform is engineered for speed, ensuring a seamless and responsive experience for all users.
+                    </p>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="bg-gray-800 rounded-2xl p-8 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center justify-center h-16 w-16 bg-rose-500 text-white rounded-full mx-auto mb-4">
+                        <i class="fas fa-lock fa-2x"></i>
+                    </div>
+                    <h2 class="mt-4 text-2xl font-bold text-white">Robust Security</h2>
+                    <p class="mt-2 text-md text-gray-400">
+                        We use the latest encryption and security protocols to protect your data and privacy at all times.
+                    </p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="bg-gray-800 rounded-2xl p-8 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center justify-center h-16 w-16 bg-lime-500 text-white rounded-full mx-auto mb-4">
+                        <i class="fas fa-mobile-alt fa-2x"></i>
+                    </div>
+                    <h2 class="mt-4 text-2xl font-bold text-white">Mobile Ready</h2>
+                    <p class="mt-2 text-md text-gray-400">
+                        Access your account from any device with our fully responsive design, optimized for mobile.
+                    </p>
+                </div>
+                
+                <!-- Feature Card 4 -->
+                <div class="bg-gray-800 rounded-2xl p-8 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center justify-center h-16 w-16 bg-amber-500 text-white rounded-full mx-auto mb-4">
+                        <i class="fas fa-chart-line fa-2x"></i>
+                    </div>
+                    <h2 class="mt-4 text-2xl font-bold text-white">Powerful Analytics</h2>
+                    <p class="mt-2 text-md text-gray-400">
+                        Gain insights into your performance with our easy-to-use analytics and reporting tools.
+                    </p>
+                </div>
+                
+                <!-- Feature Card 5 -->
+                <div class="bg-gray-800 rounded-2xl p-8 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center justify-center h-16 w-16 bg-violet-500 text-white rounded-full mx-auto mb-4">
+                        <i class="fas fa-headset fa-2x"></i>
+                    </div>
+                    <h2 class="mt-4 text-2xl font-bold text-white">24/7 Support</h2>
+                    <p class="mt-2 text-md text-gray-400">
+                        Our dedicated support team is always here to help you with any questions or issues.
+                    </p>
+                </div>
+                
+                <!-- Feature Card 6 -->
+                <div class="bg-gray-800 rounded-2xl p-8 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center justify-center h-16 w-16 bg-teal-500 text-white rounded-full mx-auto mb-4">
+                        <i class="fas fa-cogs fa-2x"></i>
+                    </div>
+                    <h2 class="mt-4 text-2xl font-bold text-white">Customizable Options</h2>
+                    <p class="mt-2 text-md text-gray-400">
+                        Tailor the product to your specific needs with a wide range of customizable settings.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<script>
+    const colors = [
+    '#FFD700', // Gold
+    '#FFFF00', // Yellow
+    '#FFC0CB', // Pink
+    '#ADD8E6', // Light Blue
+    '#90EE90', // Light Green
+    '#FFA07A', // Light Salmon
+    '#DDA0DD', // Plum
+    '#AFEEEE'  // Pale Turquoise
+];
+
+const shapeContainer = document.getElementById('bubble-container'); 
+let lastShapeTime = 0;
+// Decrease the delay to increase the number of stars and reduce latency
+const throttleDelay = 10; // New value: 10 milliseconds
+
+function createStar(x, y) {
+    const star = document.createElement('div');
+    star.className = 'star'; 
+    
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    star.style.backgroundColor = randomColor; 
+
+    const size = Math.random() * 20 + 10;
+    star.style.width = size + 'px';
+    star.style.height = size + 'px';
+    
+    star.style.left = (x - size / 2) + 'px'; 
+    star.style.top = (y - size / 2) + 'px';
+    
+    shapeContainer.appendChild(star);
+
+    setTimeout(() => {
+        star.remove();
+    }, 4000); 
+}
+
+document.addEventListener('mousemove', function(e) {
+    const currentTime = Date.now();
+    if (currentTime - lastShapeTime > throttleDelay) {
+        createStar(e.clientX, e.clientY);
+        lastShapeTime = currentTime;
+    }
+});
+</script>
+</body>
+</html>

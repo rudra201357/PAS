@@ -1,15 +1,7 @@
 <?php
 session_start();
 
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "rallyspot";
-
-$con = mysqli_connect($server, $username, $password, $database);
-if (!$con) {
-    die("Connection error: " . mysqli_connect_error());
-}
+require_once __DIR__ . '/db.php';
 
 $stage = 'select_vehicle';
 $message = null;
@@ -148,7 +140,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$con->close();
 ?>
 
 <!DOCTYPE html>
@@ -454,12 +445,10 @@ $con->close();
                     <label for="vehicle_type">Select Vehicle Type</label>
                     <select name="vehicle_type" id="vehicle_type">
                         <?php
-                            $con = mysqli_connect($server, $username, $password, $database);
                             $result = mysqli_query($con, "SELECT `vehicle_type_id`, `type_name` FROM `vehicle_types`");
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo '<option value="' . $row['vehicle_type_id'] . '">' . $row['type_name'] . '</option>';
                             }
-                            mysqli_close($con);
                         ?>
                     </select>
                 </div>

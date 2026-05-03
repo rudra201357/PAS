@@ -1,15 +1,7 @@
 <?php
 session_start();
 
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "rallyspot";
-
-$con = mysqli_connect($server, $username, $password, $database);
-if (!$con) {
-    die("Connection error: " . mysqli_connect_error());
-}
+require_once __DIR__ . '/db.php';
 
 $message = null;
 

@@ -1,15 +1,6 @@
 <?php
 
-$server   = "localhost";
-$username = "root";
-$password = "";
-$database = "rallyspot";
-
-$con = mysqli_connect($server, $username, $password, $database);
-if (!$con) {
-    die("Connection error: " . mysqli_connect_error());
-}
-
+require_once __DIR__ . '/db.php';
 
     $name     = trim(ucwords($_POST['name']))   ;
     $email    = trim(strtolower($_POST['email']))   ;

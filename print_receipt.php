@@ -1,13 +1,6 @@
 <?php 
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "rallyspot";
+require_once __DIR__ . '/db.php';
 
-$con = mysqli_connect($server, $username, $password, $database);
-if (!$con) {
-    die("Connection error: " . mysqli_connect_error());
-}
 $refNumber = $_GET['ref'] ?? '';
 $slot_no   = $_GET['slot_no'] ;
   // sensitive:  not to do
